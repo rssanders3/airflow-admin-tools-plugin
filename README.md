@@ -6,7 +6,7 @@ An Apache Airflow (Documentation: https://pythonhosted.org/airflow/, Source Code
 
 ## Screenshot
 
-![Alt text](/rssanders3/airflow-admin-tools-plugin/README_images/screenshot.png "Admin Tools Plugin Screenshot")
+![Alt text](https://github.com/rssanders3/airflow-admin-tools-plugin/blob/master/README_images/screenshot.png?raw=true "Admin Tools Plugin Screenshot")
 
 ## How do Deploy
  
