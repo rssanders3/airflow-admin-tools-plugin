@@ -1,0 +1,57 @@
+{% extends "airflow/master.html" %}
+
+{% block title %}Airflow - Admin Tools{% endblock %}
+
+{% block head_css %}
+{{ super() }}
+
+{% endblock %}
+
+{% block body %}
+<h2>Admin Tools</h2>
+
+<div id="main_content">
+
+    <div>
+        <h4>Airflow Version: {{airflow_version}}</h4>
+    </div>
+
+    <br/>
+
+    <div>
+        <h4>Test Email Alerts:</h4>
+        <form action="/admin/admintools/email" method="get">
+            Send Test Email To: <input id="to_email" name="to_email" type="text" /> <br/>
+            <input id="submit" type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <br/>
+
+    <div>
+        <h4>Dags Directory</h4>
+        <h6>Folder: {{dags_folder}}</h6>
+        <div>
+            <ul>
+            {% for dags_folder_contents_line in dags_folder_contents %}
+                {% if dags_folder_contents_line.startswith("/") %}
+                    <li>{{dags_folder_contents_line}}</li>
+                {% else %}
+                    <ul>
+                        <li>{{dags_folder_contents_line}}</li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
+
+{% block tail %}
+{{ super() }}
+
+{% endblock %}
