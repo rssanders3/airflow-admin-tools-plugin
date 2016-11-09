@@ -7,6 +7,7 @@ from flask_admin import BaseView, expose
 import logging
 import importlib
 import os
+import socket
 
 
 class AdminTools(BaseView):
@@ -14,6 +15,8 @@ class AdminTools(BaseView):
     @expose('/')
     def index(self):
         airflow_version = airflow.__version__
+
+        host_name = socket.gethostname()
 
         dags_folder = configuration.get('core', 'DAGS_FOLDER')
 
@@ -23,7 +26,7 @@ class AdminTools(BaseView):
             for file in files:
                 dags_folder_contents.append("\t" + file)
 
-        return self.render("admin_tools_plugin/index.html", airflow_version=airflow_version, dags_folder=dags_folder, dags_folder_contents=dags_folder_contents)
+        return self.render("admin_tools_plugin/index.html", airflow_version=airflow_version, host_name=host_name, dags_folder=dags_folder, dags_folder_contents=dags_folder_contents)
 
     @expose('/email')
     def email(self):

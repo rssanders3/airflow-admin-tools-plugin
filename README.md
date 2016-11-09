@@ -2,7 +2,11 @@
 
 ## Description
 
-An Apache Airflow (Documentation: https://pythonhosted.org/airflow/, Source Code: https://github.com/apache/incubator-airflow) Plugin that provides a new page to the standard Airflow Web Server to help you perform various operations
+An Apache Airflow (Documentation: https://pythonhosted.org/airflow/, Source Code: https://github.com/apache/incubator-airflow) Plugin that provides a new page to the standard Airflow Web Server to help you perform various operations:
+
+* View what version of Airflow is installed
+* Send Test Alert emails
+* View the contents of the DAGs Directory
 
 ## Screenshot
 
